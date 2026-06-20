@@ -1,0 +1,421 @@
+/* ============================================
+   NovaStream Theme - Components
+   Jellyfin 10.11.10+ Modern Streaming Theme
+   ============================================ */
+
+/* === Global Background === */
+html,
+body {
+  background-color: var(--ns-bg-primary) !important;
+  color: var(--ns-text-primary) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif !important;
+}
+
+.backgroundContainer {
+  background-color: var(--ns-bg-primary) !important;
+}
+
+/* === Header / Top Navigation === */
+.skinHeader {
+  background: rgba(10, 10, 15, 0.6) !important;
+  backdrop-filter: blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+  border-bottom: 1px solid var(--ns-glass-border) !important;
+}
+
+.skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
+  background: rgba(10, 10, 15, 0.6) !important;
+  backdrop-filter: blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+}
+
+.skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.noHomeButtonHeader {
+  background: rgba(10, 10, 15, 0.6) !important;
+  backdrop-filter: blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+}
+
+.headerButton {
+  color: var(--ns-text-secondary) !important;
+  transition: color var(--ns-transition-fast), background var(--ns-transition-fast) !important;
+}
+
+.headerButton:hover {
+  color: var(--ns-accent) !important;
+  background: var(--ns-accent-subtle) !important;
+}
+
+.headerRight {
+  color: var(--ns-text-secondary) !important;
+}
+
+/* === Sidebar / Drawer === */
+.mainDrawer,
+.drawer {
+  background: rgba(10, 10, 15, 0.85) !important;
+  backdrop-filter: blur(var(--ns-blur-heavy)) !important;
+  -webkit-backdrop-filter: blur(var(--ns-blur-heavy)) !important;
+  border-right: 1px solid var(--ns-glass-border) !important;
+}
+
+.mainDrawer-scrollContainer {
+  color: var(--ns-text-secondary) !important;
+}
+
+.navMenuOption-selected,
+.navMenuOption:hover {
+  background: var(--ns-glass-bg-hover) !important;
+  border-left: 3px solid var(--ns-accent) !important;
+}
+
+.navMenuOptionText {
+  color: var(--ns-text-secondary) !important;
+  transition: color var(--ns-transition-fast) !important;
+}
+
+.navMenuOption:hover .navMenuOptionText,
+.navMenuOption-selected .navMenuOptionText {
+  color: var(--ns-text-primary) !important;
+}
+
+/* === Cards === */
+.card,
+.cardBox {
+  background: var(--ns-glass-bg) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-md) !important;
+  transition: transform var(--ns-transition-normal),
+              box-shadow var(--ns-transition-normal),
+              border-color var(--ns-transition-normal) !important;
+  overflow: hidden;
+}
+
+.card:hover,
+.cardBox:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: var(--ns-shadow-glow) !important;
+  border-color: var(--ns-accent-subtle) !important;
+}
+
+.cardContent-button {
+  border-radius: var(--ns-radius-md) !important;
+  transition: all var(--ns-transition-normal) !important;
+}
+
+.cardImageContainer {
+  border-radius: var(--ns-radius-md) !important;
+  overflow: hidden;
+}
+
+.cardOverlayContainer {
+  border-radius: var(--ns-radius-md) !important;
+}
+
+/* === Buttons === */
+.button-submit,
+.emby-button-submit {
+  background: linear-gradient(135deg, var(--ns-accent), #0099cc) !important;
+  color: #000 !important;
+  border: none !important;
+  border-radius: var(--ns-radius-md) !important;
+  font-weight: 600 !important;
+  padding: 12px 24px !important;
+  transition: all var(--ns-transition-normal) !important;
+  box-shadow: var(--ns-shadow-sm) !important;
+}
+
+.button-submit:hover,
+.emby-button-submit:hover {
+  box-shadow: var(--ns-shadow-glow-strong) !important;
+  transform: translateY(-2px) !important;
+}
+
+.button-flat,
+.emby-button {
+  background: var(--ns-glass-bg) !important;
+  color: var(--ns-text-primary) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-md) !important;
+  transition: all var(--ns-transition-normal) !important;
+}
+
+.button-flat:hover,
+.emby-button:hover {
+  background: var(--ns-glass-bg-hover) !important;
+  border-color: var(--ns-accent-subtle) !important;
+}
+
+.cancel {
+  background: transparent !important;
+  color: var(--ns-text-secondary) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-md) !important;
+}
+
+.cancel:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* === Form Elements === */
+.emby-input,
+.emby-textarea,
+.emby-select {
+  background: var(--ns-glass-bg) !important;
+  color: var(--ns-text-primary) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-sm) !important;
+  padding: 12px 16px !important;
+  transition: border-color var(--ns-transition-normal),
+              box-shadow var(--ns-transition-normal) !important;
+}
+
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus {
+  border-color: var(--ns-accent) !important;
+  box-shadow: 0 0 0 3px var(--ns-accent-glow) !important;
+  outline: none !important;
+}
+
+.emby-input::placeholder {
+  color: var(--ns-text-tertiary) !important;
+}
+
+/* === Tabs === */
+.emby-tab-button {
+  color: var(--ns-text-secondary) !important;
+  border-bottom: 2px solid transparent !important;
+  transition: color var(--ns-transition-fast),
+              border-color var(--ns-transition-fast) !important;
+}
+
+.emby-tab-button:hover {
+  color: var(--ns-text-primary) !important;
+}
+
+.emby-tab-button.emby-tab-button-active,
+.emby-tab-button[data-index="0"] {
+  color: var(--ns-accent) !important;
+  border-bottom-color: var(--ns-accent) !important;
+}
+
+.headerTabs.sectionTabs {
+  text-size-adjust: 110%;
+  font-size: 110%;
+}
+
+.pageTitle {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* === Login Page === */
+#loginPage {
+  background: linear-gradient(135deg, #0a0a0f 0%, #0d1117 50%, #0a0a0f 100%) !important;
+}
+
+#loginPage .loginPageContainer {
+  background: var(--ns-glass-bg) !important;
+  backdrop-filter: blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-lg) !important;
+  padding: var(--ns-spacing-xl) !important;
+  box-shadow: var(--ns-shadow-lg) !important;
+}
+
+#loginPage .readOnlyContent,
+#loginPage form {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+#loginPage h1 {
+  color: var(--ns-text-primary) !important;
+  font-size: 1.8em !important;
+  font-weight: 600 !important;
+  text-align: center;
+  margin-bottom: var(--ns-spacing-lg) !important;
+}
+
+/* === Player Controls === */
+.osdHeader,
+.videoOsdBottom {
+  background: rgba(10, 10, 15, 0.7) !important;
+  backdrop-filter: blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+}
+
+.osdProgressBar-container {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--ns-radius-full) !important;
+  height: 4px !important;
+}
+
+.osdProgressBar {
+  background: var(--ns-accent) !important;
+  border-radius: var(--ns-radius-full) !important;
+}
+
+/* === Played / Watch Indicator === */
+.playedIndicator {
+  background: var(--ns-accent) !important;
+  border-radius: var(--ns-radius-full) !important;
+}
+
+.countIndicator {
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-radius: var(--ns-radius-sm) !important;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: var(--ns-radius-full) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* === Dialogs / Modals === */
+.dialog,
+.modalDialog {
+  background: var(--ns-bg-elevated) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-lg) !important;
+  box-shadow: var(--ns-shadow-lg) !important;
+}
+
+.dialogBackground {
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* === Now Playing Bar === */
+.nowPlayingBar {
+  background: rgba(10, 10, 15, 0.9) !important;
+  backdrop-filter: blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+  border-top: 1px solid var(--ns-glass-border) !important;
+}
+
+/* === Paper List / Settings === */
+.paperList,
+.listItem {
+  background: var(--ns-glass-bg) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-sm) !important;
+  transition: background var(--ns-transition-fast) !important;
+}
+
+.paperList:hover,
+.listItem:hover {
+  background: var(--ns-glass-bg-hover) !important;
+}
+
+/* === Dashboard Tables === */
+#user_usage_report_table,
+.detailTable {
+  background: var(--ns-glass-bg) !important;
+  border-radius: var(--ns-radius-md) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+}
+
+/* === Switches / Toggles === */
+.mdl-switch__input:checked + .mdl-switch__label + .mdl-switch__trackContainer > .mdl-switch__track {
+  background: rgba(0, 212, 255, 0.4) !important;
+}
+
+.mdl-switch__input:checked + .mdl-switch__label + .mdl-switch__trackContainer > .mdl-switch__track > .mdl-switch__thumb {
+  background: var(--ns-accent) !important;
+}
+
+/* === Section Titles === */
+.sectionTitleContainer h2,
+.sectionTitle {
+  color: var(--ns-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* === Episode Preview Compact === */
+.listItemImage.listItemImage-large.itemAction.lazy {
+  height: 110px;
+  border-radius: var(--ns-radius-sm) !important;
+}
+
+.listItem-content {
+  height: 115px;
+}
+
+.secondary.listItem-overview.listItemBodyText {
+  height: 61px;
+  margin: 0;
+  color: var(--ns-text-secondary) !important;
+}
+
+/* === Image Rounded === */
+.cardContent-button,
+.itemDetailImage {
+  border-radius: var(--ns-radius-md) !important;
+}
+
+/* === Search === */
+.searchInput {
+  background: var(--ns-glass-bg) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-full) !important;
+  color: var(--ns-text-primary) !important;
+}
+
+.searchInput:focus {
+  border-color: var(--ns-accent) !important;
+  box-shadow: 0 0 0 3px var(--ns-accent-glow) !important;
+}
+
+/* === Cast & Crew Compact === */
+#castContent .card.overflowPortraitCard.personCard {
+  width: 4.2cm !important;
+  font-size: 90% !important;
+}
+
+#castContent .cardScalable {
+  width: 3.8cm !important;
+  height: 3.8cm !important;
+  border-radius: var(--ns-radius-full) !important;
+}
+
+/* === Tooltip === */
+.tooltip {
+  background: var(--ns-bg-elevated) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-sm) !important;
+  box-shadow: var(--ns-shadow-md) !important;
+}
+
+/* === Progress Bar (Resume) === */
+.itemProgressBar {
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--ns-radius-full) !important;
+  margin: 4px 8px !important;
+}
+
+.itemProgressBarForeground {
+  background: var(--ns-accent) !important;
+  border-radius: var(--ns-radius-full) !important;
+}
+
+.innerCardFooterClear {
+  background-color: transparent !important;
+}

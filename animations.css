@@ -1,0 +1,237 @@
+/* ============================================
+   NovaStream Theme - Animations
+   Jellyfin 10.11.10+ Modern Streaming Theme
+   ============================================ */
+
+/* === Page Load Fade In === */
+@keyframes ns-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mainAnimatedPage,
+.skinBody {
+  animation: ns-fadeIn 0.4s ease forwards;
+}
+
+/* === Card Hover Glow Pulse === */
+@keyframes ns-glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+  }
+}
+
+.card:hover {
+  animation: ns-glowPulse 2s ease-in-out infinite;
+}
+
+/* === Button Press Effect === */
+@keyframes ns-buttonPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button-submit:active,
+.emby-button:active {
+  animation: ns-buttonPress 0.15s ease;
+}
+
+/* === Gradient Background Animation (Login) === */
+@keyframes ns-gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#loginPage {
+  background-size: 200% 200% !important;
+  animation: ns-gradientShift 15s ease infinite !important;
+}
+
+/* === Loading Skeleton Shimmer === */
+@keyframes ns-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.cardImageContainer,
+.backdropImage {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImageContainer::after,
+.backdropImage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: ns-shimmer 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* === Accent Line Slide === */
+@keyframes ns-slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.emby-tab-button.emby-tab-button-active::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--ns-accent);
+  animation: ns-slideIn 0.3s ease forwards;
+}
+
+/* === Floating Effect for Hero Banner === */
+@keyframes ns-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* === Pulse Ring for Live Content === */
+@keyframes ns-pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* === Spin for Loading === */
+@keyframes ns-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: ns-spin 1s linear infinite;
+}
+
+/* === Scale In for Modals === */
+@keyframes ns-scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dialog,
+.modalDialog {
+  animation: ns-scaleIn 0.25s ease forwards;
+}
+
+/* === Slide Up for Notifications === */
+@keyframes ns-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast,
+.notification {
+  animation: ns-slideUp 0.3s ease forwards;
+}
+
+/* === Subtle Breathe for Active Elements === */
+@keyframes ns-breathe {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* === Hover Transitions for Interactive Elements === */
+.headerButton,
+.navMenuOption,
+.emby-tab-button,
+.button-flat,
+.emby-button,
+.listItem,
+.card {
+  transition: all var(--ns-transition-normal) !important;
+}
+
+/* === Focus Visible Ring === */
+*:focus-visible {
+  outline: 2px solid var(--ns-accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* === Smooth Scroll === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Media Query: Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

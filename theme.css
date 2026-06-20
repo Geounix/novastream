@@ -1,0 +1,188 @@
+/* ============================================
+   NovaStream Theme
+   Jellyfin 10.11.10+ Modern Streaming Theme
+   
+   A glassmorphism-inspired dark theme with
+   cyan accents for a premium streaming look.
+   
+   Author: Geounix
+   Version: 1.0.0
+   License: GPL-3.0
+   Repository: https://github.com/Geounix/novastream
+   ============================================ */
+
+/* === Import Theme Modules via CDN === */
+@import url('https://cdn.jsdelivr.net/gh/Geounix/novastream@main/variables.css');
+@import url('https://cdn.jsdelivr.net/gh/Geounix/novastream@main/components.css');
+@import url('https://cdn.jsdelivr.net/gh/Geounix/novastream@main/animations.css');
+
+/* ============================================
+   Additional Integration Styles
+   ============================================ */
+
+/* === Hero Banner / Backdrop === */
+.backdropContainer {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(10, 10, 15, 0.4) 50%,
+    var(--ns-bg-primary) 100%
+  ) !important;
+}
+
+.homePageBackground {
+  background-color: var(--ns-bg-primary) !important;
+}
+
+/* === Featured Content Hero === */
+.primaryImageContainer img,
+.itemDetailImage img {
+  border-radius: var(--ns-radius-md) !important;
+}
+
+/* === Vertical Menu (Context Menu) === */
+.dialogMenu,
+.menu {
+  background: var(--ns-bg-elevated) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-md) !important;
+  box-shadow: var(--ns-shadow-lg) !important;
+  backdrop-filter: blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+}
+
+.menuItem {
+  color: var(--ns-text-secondary) !important;
+  transition: all var(--ns-transition-fast) !important;
+}
+
+.menuItem:hover {
+  background: var(--ns-glass-bg-hover) !important;
+  color: var(--ns-text-primary) !important;
+}
+
+/* === Badge / Tag === */
+.badge,
+.tag {
+  background: var(--ns-accent-subtle) !important;
+  color: var(--ns-accent) !important;
+  border-radius: var(--ns-radius-full) !important;
+  padding: 4px 10px !important;
+  font-size: 0.75em !important;
+  font-weight: 600 !important;
+}
+
+/* === Chip / Genre Tag === */
+.chip,
+.genreButton {
+  background: var(--ns-glass-bg) !important;
+  color: var(--ns-text-secondary) !important;
+  border: 1px solid var(--ns-glass-border) !important;
+  border-radius: var(--ns-radius-full) !important;
+  transition: all var(--ns-transition-fast) !important;
+}
+
+.chip:hover,
+.genreButton:hover {
+  background: var(--ns-accent-subtle) !important;
+  color: var(--ns-accent) !important;
+  border-color: var(--ns-accent) !important;
+}
+
+/* === Episode / Track Number === */
+.episodeNumber,
+.trackNumber {
+  color: var(--ns-text-tertiary) !important;
+  font-size: 0.85em !important;
+}
+
+/* === Media Info Badges === */
+.mediaInfo {
+  color: var(--ns-text-secondary) !important;
+}
+
+.mediaInfo-icon {
+  color: var(--ns-accent) !important;
+}
+
+/* === Rating Stars === */
+.starRatingContainer {
+  color: var(--ns-accent) !important;
+}
+
+/* === Video Player Overlay === */
+.videoPlayerContainer .osdLoading {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* === Slider / Range Input === */
+input[type="range"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--ns-radius-full) !important;
+  outline: none !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 14px !important;
+  height: 14px !important;
+  background: var(--ns-accent) !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  box-shadow: 0 0 8px var(--ns-accent-glow) !important;
+  transition: transform var(--ns-transition-fast) !important;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2) !important;
+}
+
+/* === Checkbox Custom === */
+input[type="checkbox"] {
+  accent-color: var(--ns-accent) !important;
+}
+
+/* === Selection Color === */
+::selection {
+  background: var(--ns-accent-glow) !important;
+  color: #fff !important;
+}
+
+/* === Link Color === */
+a {
+  color: var(--ns-accent) !important;
+  transition: color var(--ns-transition-fast) !important;
+}
+
+a:hover {
+  color: var(--ns-accent-hover) !important;
+}
+
+/* === Responsive Adjustments === */
+@media screen and (max-width: 768px) {
+  .card:hover {
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .mainDrawer {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* === High Contrast Mode === */
+@media (prefers-contrast: high) {
+  :root {
+    --ns-glass-bg: rgba(255, 255, 255, 0.1);
+    --ns-glass-border: rgba(255, 255, 255, 0.3);
+    --ns-text-primary: #fff;
+    --ns-text-secondary: rgba(255, 255, 255, 0.85);
+  }
+}
