@@ -1,179 +1,231 @@
 /* ============================================
    NovaStream Theme - Components
-   Jellyfin 10.11.10+ Modern Streaming Theme
+   Apple TV / Plex Premium Dark Style
    ============================================ */
 
-/* === Global Background === */
+/* === Global Reset & Background === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
-body {
-  background-color: var(--ns-bg-primary) !important;
+body,
+skin-app,
+.app {
+  background-color: #000000 !important;
   color: var(--ns-text-primary) !important;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
 .backgroundContainer {
-  background-color: var(--ns-bg-primary) !important;
+  background-color: #000000 !important;
+  background-image: none !important;
 }
 
-/* === Header / Top Navigation === */
-.skinHeader {
-  background: rgba(10, 10, 15, 0.6) !important;
-  backdrop-filter: blur(var(--ns-blur)) !important;
-  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
-  border-bottom: 1px solid var(--ns-glass-border) !important;
+/* === HEADER - Frosted Glass === */
+.skinHeader,
+.skinHeader-focuscontainer-x {
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: saturate(180%) blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(var(--ns-blur)) !important;
+  border-bottom: none !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 }
 
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
-  background: rgba(10, 10, 15, 0.6) !important;
-  backdrop-filter: blur(var(--ns-blur)) !important;
-  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: saturate(180%) blur(var(--ns-blur)) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(var(--ns-blur)) !important;
 }
 
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.noHomeButtonHeader {
-  background: rgba(10, 10, 15, 0.6) !important;
-  backdrop-filter: blur(var(--ns-blur)) !important;
-  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: saturate(180%) blur(var(--ns-blur)) !important;
 }
 
-.headerButton {
-  color: var(--ns-text-secondary) !important;
-  transition: color var(--ns-transition-fast), background var(--ns-transition-fast) !important;
+.headerButton,
+.headerButtonRight {
+  color: var(--ns-text-primary) !important;
+  border-radius: var(--ns-radius-sm) !important;
+  transition: all var(--ns-transition-fast) !important;
 }
 
-.headerButton:hover {
-  color: var(--ns-accent) !important;
-  background: var(--ns-accent-subtle) !important;
+.headerButton:hover,
+.headerButtonRight:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .headerRight {
-  color: var(--ns-text-secondary) !important;
+  color: var(--ns-text-primary) !important;
 }
 
-/* === Sidebar / Drawer === */
+/* === SIDEBAR - Deep Dark Glass === */
 .mainDrawer,
-.drawer {
-  background: rgba(10, 10, 15, 0.85) !important;
-  backdrop-filter: blur(var(--ns-blur-heavy)) !important;
-  -webkit-backdrop-filter: blur(var(--ns-blur-heavy)) !important;
-  border-right: 1px solid var(--ns-glass-border) !important;
-}
-
+.drawer,
 .mainDrawer-scrollContainer {
-  color: var(--ns-text-secondary) !important;
+  background: rgba(10, 10, 15, 0.92) !important;
+  backdrop-filter: saturate(150%) blur(var(--ns-blur-heavy)) !important;
+  -webkit-backdrop-filter: saturate(150%) blur(var(--ns-blur-heavy)) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
-.navMenuOption-selected,
+.navMenuOption {
+  border-radius: var(--ns-radius-sm) !important;
+  margin: 2px 8px !important;
+  padding: 10px 14px !important;
+  transition: all var(--ns-transition-fast) !important;
+}
+
 .navMenuOption:hover {
-  background: var(--ns-glass-bg-hover) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.navMenuOption-selected {
+  background: rgba(0, 212, 255, 0.12) !important;
   border-left: 3px solid var(--ns-accent) !important;
 }
 
 .navMenuOptionText {
   color: var(--ns-text-secondary) !important;
-  transition: color var(--ns-transition-fast) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
 }
 
-.navMenuOption:hover .navMenuOptionText,
-.navMenuOption-selected .navMenuOptionText {
+.navMenuOption:hover .navMenuOptionText {
   color: var(--ns-text-primary) !important;
 }
 
-/* === Cards === */
+/* === CARDS - Apple TV Style === */
 .card,
 .cardBox {
-  background: var(--ns-glass-bg) !important;
-  border: 1px solid var(--ns-glass-border) !important;
-  border-radius: var(--ns-radius-md) !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: var(--ns-radius-lg) !important;
   transition: transform var(--ns-transition-normal),
-              box-shadow var(--ns-transition-normal),
-              border-color var(--ns-transition-normal) !important;
+              box-shadow var(--ns-transition-normal) !important;
   overflow: hidden;
+  position: relative;
 }
 
 .card:hover,
 .cardBox:hover {
-  transform: translateY(-4px) scale(1.02) !important;
-  box-shadow: var(--ns-shadow-glow) !important;
-  border-color: var(--ns-accent-subtle) !important;
+  transform: scale(1.05) !important;
+  z-index: 10;
 }
 
 .cardContent-button {
   border-radius: var(--ns-radius-md) !important;
-  transition: all var(--ns-transition-normal) !important;
+  overflow: hidden;
 }
 
 .cardImageContainer {
   border-radius: var(--ns-radius-md) !important;
   overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+  transition: box-shadow var(--ns-transition-normal) !important;
+}
+
+.card:hover .cardImageContainer {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7),
+              0 0 40px rgba(0, 212, 255, 0.15) !important;
 }
 
 .cardOverlayContainer {
   border-radius: var(--ns-radius-md) !important;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    transparent 100%
+  ) !important;
 }
 
-/* === Buttons === */
+/* === HERO BANNER - Full Bleed === */
+.backdropContainer,
+.backdropImage {
+  display: block !important;
+}
+
+.homePageBackground,
+.backgroundContainer {
+  background-color: #000 !important;
+}
+
+.pagePageWithBackdrop,
+#indexPage {
+  background-color: #000 !important;
+}
+
+/* === BUTTONS - Apple Style === */
 .button-submit,
-.emby-button-submit {
-  background: linear-gradient(135deg, var(--ns-accent), #0099cc) !important;
+.emby-button-submit,
+.btnSubmit {
+  background: var(--ns-accent-gradient) !important;
   color: #000 !important;
   border: none !important;
-  border-radius: var(--ns-radius-md) !important;
+  border-radius: var(--ns-radius-full) !important;
   font-weight: 600 !important;
-  padding: 12px 24px !important;
+  font-size: 15px !important;
+  padding: 14px 32px !important;
+  letter-spacing: 0.02em !important;
   transition: all var(--ns-transition-normal) !important;
-  box-shadow: var(--ns-shadow-sm) !important;
+  box-shadow: 0 2px 12px rgba(0, 212, 255, 0.3) !important;
+  text-transform: none !important;
 }
 
 .button-submit:hover,
 .emby-button-submit:hover {
-  box-shadow: var(--ns-shadow-glow-strong) !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 24px rgba(0, 212, 255, 0.5) !important;
+  filter: brightness(1.1) !important;
 }
 
 .button-flat,
-.emby-button {
-  background: var(--ns-glass-bg) !important;
+.emby-button,
+.cancel {
+  background: rgba(255, 255, 255, 0.08) !important;
   color: var(--ns-text-primary) !important;
-  border: 1px solid var(--ns-glass-border) !important;
-  border-radius: var(--ns-radius-md) !important;
-  transition: all var(--ns-transition-normal) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--ns-radius-full) !important;
+  font-weight: 500 !important;
+  padding: 12px 28px !important;
+  transition: all var(--ns-transition-fast) !important;
 }
 
 .button-flat:hover,
 .emby-button:hover {
-  background: var(--ns-glass-bg-hover) !important;
-  border-color: var(--ns-accent-subtle) !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .cancel {
   background: transparent !important;
-  color: var(--ns-text-secondary) !important;
-  border: 1px solid var(--ns-glass-border) !important;
-  border-radius: var(--ns-radius-md) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-.cancel:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
-}
-
-/* === Form Elements === */
+/* === FORM INPUTS - Glass Style === */
 .emby-input,
 .emby-textarea,
 .emby-select {
-  background: var(--ns-glass-bg) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
   color: var(--ns-text-primary) !important;
-  border: 1px solid var(--ns-glass-border) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-radius: var(--ns-radius-sm) !important;
-  padding: 12px 16px !important;
-  transition: border-color var(--ns-transition-normal),
-              box-shadow var(--ns-transition-normal) !important;
+  padding: 14px 18px !important;
+  font-size: 15px !important;
+  transition: all var(--ns-transition-fast) !important;
 }
 
 .emby-input:focus,
 .emby-textarea:focus,
 .emby-select:focus {
   border-color: var(--ns-accent) !important;
-  box-shadow: 0 0 0 3px var(--ns-accent-glow) !important;
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
   outline: none !important;
 }
 
@@ -181,73 +233,113 @@ body {
   color: var(--ns-text-tertiary) !important;
 }
 
-/* === Tabs === */
+/* === TABS - Apple Segmented Style === */
 .emby-tab-button {
   color: var(--ns-text-secondary) !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
   border-bottom: 2px solid transparent !important;
-  transition: color var(--ns-transition-fast),
-              border-color var(--ns-transition-fast) !important;
+  padding: 14px 20px !important;
+  transition: all var(--ns-transition-fast) !important;
+  border-radius: 8px 8px 0 0 !important;
 }
 
 .emby-tab-button:hover {
   color: var(--ns-text-primary) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
 }
 
-.emby-tab-button.emby-tab-button-active,
-.emby-tab-button[data-index="0"] {
+.emby-tab-button.emby-tab-button-active {
   color: var(--ns-accent) !important;
   border-bottom-color: var(--ns-accent) !important;
 }
 
 .headerTabs.sectionTabs {
-  text-size-adjust: 110%;
-  font-size: 110%;
+  text-size-adjust: 110% !important;
+  font-size: 110% !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 .pageTitle {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  font-weight: 600 !important;
+  font-size: 22px !important;
 }
 
-/* === Login Page === */
+/* === SECTION TITLES - Bold === */
+.sectionTitleContainer h2,
+.sectionTitle,
+.sectionTitleContainer a h2 {
+  color: var(--ns-text-primary) !important;
+  font-weight: 700 !important;
+  font-size: 22px !important;
+  letter-spacing: -0.01em !important;
+}
+
+.sectionTitleContainer a {
+  color: var(--ns-text-primary) !important;
+}
+
+.sectionTitleContainer a:hover {
+  color: var(--ns-accent) !important;
+}
+
+/* === LOGIN PAGE - Premium Dark === */
 #loginPage {
-  background: linear-gradient(135deg, #0a0a0f 0%, #0d1117 50%, #0a0a0f 100%) !important;
+  background: #000000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
 }
 
 #loginPage .loginPageContainer {
-  background: var(--ns-glass-bg) !important;
-  backdrop-filter: blur(var(--ns-blur)) !important;
-  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
-  border: 1px solid var(--ns-glass-border) !important;
-  border-radius: var(--ns-radius-lg) !important;
-  padding: var(--ns-spacing-xl) !important;
-  box-shadow: var(--ns-shadow-lg) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: saturate(180%) blur(40px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(40px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--ns-radius-xl) !important;
+  padding: 48px 40px !important;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6) !important;
+  max-width: 420px !important;
+  width: 90% !important;
 }
 
 #loginPage .readOnlyContent,
 #loginPage form {
-  max-width: 380px;
-  margin: 0 auto;
+  max-width: 100% !important;
+  margin: 0 !important;
 }
 
 #loginPage h1 {
   color: var(--ns-text-primary) !important;
-  font-size: 1.8em !important;
-  font-weight: 600 !important;
-  text-align: center;
-  margin-bottom: var(--ns-spacing-lg) !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  margin-bottom: 8px !important;
+  letter-spacing: -0.02em !important;
 }
 
-/* === Player Controls === */
+#loginPage .raised.cancel.block.btnManual.emby-button,
+#loginPage .raised.cancel.block.btnForgotPassword.emby-button {
+  display: none !important;
+}
+
+/* === PLAYER CONTROLS - Minimal === */
 .osdHeader,
 .videoOsdBottom {
-  background: rgba(10, 10, 15, 0.7) !important;
-  backdrop-filter: blur(var(--ns-blur)) !important;
-  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    transparent 100%
+  ) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
 .osdProgressBar-container {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
   border-radius: var(--ns-radius-full) !important;
   height: 4px !important;
 }
@@ -257,18 +349,21 @@ body {
   border-radius: var(--ns-radius-full) !important;
 }
 
-/* === Played / Watch Indicator === */
+/* === PLAYED/WATCHED INDICATORS === */
 .playedIndicator {
   background: var(--ns-accent) !important;
   border-radius: var(--ns-radius-full) !important;
+  box-shadow: 0 2px 8px rgba(0, 212, 255, 0.4) !important;
 }
 
 .countIndicator {
-  background: rgba(0, 0, 0, 0.6) !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(8px) !important;
   border-radius: var(--ns-radius-sm) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* === Scrollbar === */
+/* === SCROLLBAR - Ultra Thin === */
 ::-webkit-scrollbar {
   width: 6px !important;
   height: 6px !important;
@@ -279,111 +374,111 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
   border-radius: var(--ns-radius-full) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.22) !important;
 }
 
-/* === Dialogs / Modals === */
+/* === DIALOGS/MODALS - Glass === */
 .dialog,
-.modalDialog {
-  background: var(--ns-bg-elevated) !important;
-  border: 1px solid var(--ns-glass-border) !important;
+.modalDialog,
+.alertDialog {
+  background: rgba(28, 28, 36, 0.95) !important;
+  backdrop-filter: saturate(180%) blur(40px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(40px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: var(--ns-radius-lg) !important;
-  box-shadow: var(--ns-shadow-lg) !important;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7) !important;
 }
 
-.dialogBackground {
-  background: rgba(0, 0, 0, 0.7) !important;
+.dialogBackground,
+.modalBackground {
+  background: rgba(0, 0, 0, 0.75) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
 }
 
-/* === Now Playing Bar === */
+/* === NOW PLAYING BAR === */
 .nowPlayingBar {
-  background: rgba(10, 10, 15, 0.9) !important;
-  backdrop-filter: blur(var(--ns-blur)) !important;
-  -webkit-backdrop-filter: blur(var(--ns-blur)) !important;
-  border-top: 1px solid var(--ns-glass-border) !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: saturate(180%) blur(var(--ns-blur)) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
-/* === Paper List / Settings === */
+/* === PAPER LIST / SETTINGS === */
 .paperList,
 .listItem {
-  background: var(--ns-glass-bg) !important;
-  border: 1px solid var(--ns-glass-border) !important;
+  background: transparent !important;
   border-radius: var(--ns-radius-sm) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
   transition: background var(--ns-transition-fast) !important;
 }
 
 .paperList:hover,
 .listItem:hover {
-  background: var(--ns-glass-bg-hover) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
 }
 
-/* === Dashboard Tables === */
+/* === DASHBOARD TABLES === */
 #user_usage_report_table,
 .detailTable {
-  background: var(--ns-glass-bg) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
   border-radius: var(--ns-radius-md) !important;
-  border: 1px solid var(--ns-glass-border) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  overflow: hidden;
 }
 
-/* === Switches / Toggles === */
+/* === SWITCHES/TOGGLES === */
 .mdl-switch__input:checked + .mdl-switch__label + .mdl-switch__trackContainer > .mdl-switch__track {
   background: rgba(0, 212, 255, 0.4) !important;
 }
 
 .mdl-switch__input:checked + .mdl-switch__label + .mdl-switch__trackContainer > .mdl-switch__track > .mdl-switch__thumb {
   background: var(--ns-accent) !important;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.5) !important;
 }
 
-/* === Section Titles === */
-.sectionTitleContainer h2,
-.sectionTitle {
-  color: var(--ns-text-primary) !important;
-  font-weight: 600 !important;
-}
-
-/* === Episode Preview Compact === */
+/* === EPISODE PREVIEW COMPACT === */
 .listItemImage.listItemImage-large.itemAction.lazy {
-  height: 110px;
+  height: 110px !important;
   border-radius: var(--ns-radius-sm) !important;
 }
 
 .listItem-content {
-  height: 115px;
+  height: 115px !important;
 }
 
 .secondary.listItem-overview.listItemBodyText {
-  height: 61px;
-  margin: 0;
+  height: 61px !important;
+  margin: 0 !important;
   color: var(--ns-text-secondary) !important;
+  line-height: 1.4 !important;
 }
 
-/* === Image Rounded === */
+/* === IMAGE ROUNDED === */
 .cardContent-button,
 .itemDetailImage {
   border-radius: var(--ns-radius-md) !important;
 }
 
-/* === Search === */
+/* === SEARCH - Pill Style === */
 .searchInput {
-  background: var(--ns-glass-bg) !important;
-  border: 1px solid var(--ns-glass-border) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: var(--ns-radius-full) !important;
   color: var(--ns-text-primary) !important;
+  padding: 12px 20px !important;
 }
 
 .searchInput:focus {
   border-color: var(--ns-accent) !important;
-  box-shadow: 0 0 0 3px var(--ns-accent-glow) !important;
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15) !important;
 }
 
-/* === Cast & Crew Compact === */
+/* === CAST & CREW COMPACT === */
 #castContent .card.overflowPortraitCard.personCard {
   width: 4.2cm !important;
   font-size: 90% !important;
@@ -395,18 +490,19 @@ body {
   border-radius: var(--ns-radius-full) !important;
 }
 
-/* === Tooltip === */
+/* === TOOLTIP === */
 .tooltip {
-  background: var(--ns-bg-elevated) !important;
-  border: 1px solid var(--ns-glass-border) !important;
+  background: rgba(28, 28, 36, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: var(--ns-radius-sm) !important;
   box-shadow: var(--ns-shadow-md) !important;
 }
 
-/* === Progress Bar (Resume) === */
+/* === PROGRESS BAR (Resume) === */
 .itemProgressBar {
   height: 4px !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
   border-radius: var(--ns-radius-full) !important;
   margin: 4px 8px !important;
 }
@@ -418,4 +514,150 @@ body {
 
 .innerCardFooterClear {
   background-color: transparent !important;
+}
+
+/* === BADGE / TAG === */
+.badge,
+.tag {
+  background: rgba(0, 212, 255, 0.15) !important;
+  color: var(--ns-accent) !important;
+  border-radius: var(--ns-radius-full) !important;
+  padding: 4px 12px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* === CHIP / GENRE === */
+.chip,
+.genreButton {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--ns-text-secondary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--ns-radius-full) !important;
+  font-weight: 500 !important;
+  transition: all var(--ns-transition-fast) !important;
+}
+
+.chip:hover,
+.genreButton:hover {
+  background: rgba(0, 212, 255, 0.12) !important;
+  color: var(--ns-accent) !important;
+  border-color: var(--ns-accent) !important;
+}
+
+/* === MEDIA INFO === */
+.mediaInfo {
+  color: var(--ns-text-secondary) !important;
+}
+
+.mediaInfo-icon {
+  color: var(--ns-accent) !important;
+}
+
+/* === RATING STARS === */
+.starRatingContainer {
+  color: var(--ns-accent) !important;
+}
+
+/* === VIDEO PLAYER OVERLAY === */
+.videoPlayerContainer .osdLoading {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* === SLIDER / RANGE === */
+input[type="range"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--ns-radius-full) !important;
+  outline: none !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 16px !important;
+  height: 16px !important;
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.5),
+              0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  transition: transform var(--ns-transition-fast) !important;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2) !important;
+}
+
+/* === CHECKBOX === */
+input[type="checkbox"] {
+  accent-color: var(--ns-accent) !important;
+}
+
+/* === SELECTION === */
+::selection {
+  background: rgba(0, 212, 255, 0.35) !important;
+  color: #fff !important;
+}
+
+/* === LINKS === */
+a {
+  color: var(--ns-accent) !important;
+  transition: color var(--ns-transition-fast) !important;
+}
+
+a:hover {
+  color: var(--ns-accent-hover) !important;
+}
+
+/* === FULL HEADER MOD === */
+.skinHeader,
+.mainDrawer,
+.emby-input,
+.emby-textarea,
+.emby-select,
+.navMenuOption-selected,
+.cardBox,
+.paperList {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* === HIDE HOME ICON === */
+.headerHomeButton {
+  display: none !important;
+}
+
+/* === ITEM DETAIL PAGE === */
+.itemDetailPage {
+  background-color: #000 !important;
+}
+
+/* === EMBY SCROLLER BUTTONS === */
+.emby-scrollbuttons-button {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+  .card:hover {
+    transform: none !important;
+  }
+
+  .mainDrawer {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  #loginPage .loginPageContainer {
+    padding: 32px 24px !important;
+    border-radius: var(--ns-radius-lg) !important;
+  }
 }

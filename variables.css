@@ -1,54 +1,56 @@
 /* ============================================
    NovaStream Theme - Variables
-   Jellyfin 10.11.10+ Modern Streaming Theme
+   Apple TV / Plex Premium Style
    ============================================ */
 
 :root {
   /* === Accent Colors === */
   --ns-accent: #00d4ff;
   --ns-accent-rgb: 0, 212, 255;
-  --ns-accent-hover: #00b8e6;
-  --ns-accent-glow: rgba(0, 212, 255, 0.4);
-  --ns-accent-subtle: rgba(0, 212, 255, 0.15);
+  --ns-accent-hover: #33ddff;
+  --ns-accent-glow: rgba(0, 212, 255, 0.5);
+  --ns-accent-subtle: rgba(0, 212, 255, 0.2);
+  --ns-accent-gradient: linear-gradient(135deg, #00d4ff, #7b61ff);
 
   /* === Background Colors === */
-  --ns-bg-primary: #0a0a0f;
-  --ns-bg-secondary: #12121a;
-  --ns-bg-tertiary: #1a1a25;
-  --ns-bg-elevated: #1e1e2a;
+  --ns-bg-primary: #000000;
+  --ns-bg-secondary: #0a0a0f;
+  --ns-bg-tertiary: #111118;
+  --ns-bg-elevated: #1a1a24;
+  --ns-bg-card: #16161e;
 
   /* === Glass Effect === */
-  --ns-glass-bg: rgba(255, 255, 255, 0.04);
-  --ns-glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --ns-glass-bg: rgba(255, 255, 255, 0.05);
+  --ns-glass-bg-hover: rgba(255, 255, 255, 0.10);
   --ns-glass-border: rgba(255, 255, 255, 0.08);
-  --ns-glass-border-hover: rgba(255, 255, 255, 0.15);
-  --ns-blur: 20px;
-  --ns-blur-heavy: 40px;
+  --ns-glass-border-hover: rgba(255, 255, 255, 0.18);
+  --ns-blur: 24px;
+  --ns-blur-heavy: 50px;
 
   /* === Text Colors === */
-  --ns-text-primary: rgba(255, 255, 255, 0.95);
-  --ns-text-secondary: rgba(255, 255, 255, 0.7);
-  --ns-text-tertiary: rgba(255, 255, 255, 0.45);
+  --ns-text-primary: #ffffff;
+  --ns-text-secondary: rgba(255, 255, 255, 0.72);
+  --ns-text-tertiary: rgba(255, 255, 255, 0.44);
   --ns-text-accent: var(--ns-accent);
 
   /* === Shadows === */
-  --ns-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --ns-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --ns-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --ns-shadow-glow: 0 0 20px var(--ns-accent-glow);
-  --ns-shadow-glow-strong: 0 0 40px var(--ns-accent-glow);
+  --ns-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.6);
+  --ns-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.7);
+  --ns-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.8);
+  --ns-shadow-glow: 0 0 30px var(--ns-accent-glow);
+  --ns-shadow-glow-strong: 0 0 60px var(--ns-accent-glow);
 
   /* === Border Radius === */
-  --ns-radius-sm: 6px;
-  --ns-radius-md: 10px;
-  --ns-radius-lg: 16px;
+  --ns-radius-sm: 8px;
+  --ns-radius-md: 12px;
+  --ns-radius-lg: 18px;
   --ns-radius-xl: 24px;
   --ns-radius-full: 9999px;
 
   /* === Transitions === */
-  --ns-transition-fast: 0.15s ease;
-  --ns-transition-normal: 0.3s ease;
-  --ns-transition-slow: 0.5s ease;
+  --ns-transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --ns-transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --ns-transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* === Spacing === */
   --ns-spacing-xs: 4px;
