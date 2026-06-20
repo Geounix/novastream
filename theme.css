@@ -44,16 +44,11 @@ skin-app,
 
 .backgroundContainer {
   background-color: #000000 !important;
-  background-image: none !important;
 }
 
 /* === BACKDROP BLUR - Monochromic Style === */
 .backdropImage {
-  filter: blur(60px) saturate(180%) contrast(150%) brightness(20%) !important;
-}
-
-.backgroundContainer.withBackdrop {
-  background-color: transparent !important;
+  filter: blur(60px) saturate(180%) contrast(150%) brightness(40%) !important;
 }
 
 /* === HEADER - Fully Transparent === */
@@ -175,8 +170,7 @@ skin-app,
   box-shadow: none !important;
 }
 
-.visualCardBox,
-.cardImageContainer {
+.visualCardBox {
   box-shadow: none !important;
 }
 
@@ -280,7 +274,7 @@ skin-app,
 }
 
 /* === LOGIN PAGE === */
-#loginPage:not(.hide) {
+#loginPage {
   background: radial-gradient(
     ellipse at 20% 50%,
     rgba(0, 212, 255, 0.06) 0%,
@@ -293,9 +287,6 @@ skin-app,
   ),
   #000000 !important;
   min-height: 100vh !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
 }
 
 #loginPage .loginPageContainer {
@@ -308,6 +299,7 @@ skin-app,
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6) !important;
   max-width: 420px !important;
   width: 90% !important;
+  margin: 0 auto !important;
 }
 
 #loginPage .readOnlyContent,
@@ -327,6 +319,10 @@ skin-app,
 
 #loginPage .raised.cancel.block.btnManual.emby-button,
 #loginPage .raised.cancel.block.btnForgotPassword.emby-button {
+  display: none !important;
+}
+
+#loginPage.hide {
   display: none !important;
 }
 
