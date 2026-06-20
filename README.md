@@ -26,7 +26,7 @@ A premium dark theme for Jellyfin 10.11.10+ inspired by Apple TV and Plex. Featu
 1. Open Jellyfin Dashboard > Branding > Custom CSS
 2. Add the following line:
    ```css
-   @import url('https://cdn.jsdelivr.net/gh/Geounix/novastream@master/theme.css');
+   @import url('https://cdn.jsdelivr.net/gh/Geounix/novastream@v3.0/theme.css');
    ```
 3. Click **Save** - No restart required
 
@@ -67,12 +67,14 @@ Add to Dashboard > Branding > Custom CSS:
 
 ```
 novastream/
-├── theme.css          # Main file (import this one)
-├── variables.css      # Customizable CSS variables
-├── components.css     # UI component styles
-├── animations.css     # Animations and transitions
+├── theme.css          # Single-file theme (import this one)
+├── variables.css      # (Legacy) CSS variables
+├── components.css     # (Legacy) Component styles
+├── animations.css     # (Legacy) Animations
 └── README.md          # This file
 ```
+
+> **Note:** v3.0+ is a single `theme.css` file containing all styles. The legacy files are no longer needed.
 
 ## Troubleshooting
 
