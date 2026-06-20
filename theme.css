@@ -280,7 +280,7 @@ skin-app,
 }
 
 /* === LOGIN PAGE === */
-#loginPage {
+#loginPage:not(.hide) {
   background: radial-gradient(
     ellipse at 20% 50%,
     rgba(0, 212, 255, 0.06) 0%,
